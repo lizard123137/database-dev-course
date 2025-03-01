@@ -1,0 +1,3 @@
+# Ignore all latex compilation files
+documentation.*
+!documentation.tex
