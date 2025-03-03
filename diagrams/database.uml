@@ -1,0 +1,86 @@
+@startuml
+
+' hide the spot
+' hide circle
+
+' avoid problems with angled crows feet
+skinparam linetype ortho
+
+entity "User" as user {
+    *id: number <<PK>>
+
+    email: text
+    username: text
+    password: text
+
+    created_at: timestamp
+    modified_at: timestamp
+    ---
+    *offer_id: number <<FK>>
+    *user_profile_id: number <<FK>>
+    *user_stats_id: number <<FK>>
+}
+
+entity "User Details" as user_profile {
+    *id: number <<PK>>
+    avatar: text
+    description: text
+    ---
+    *user_id: number <<FK>>
+}
+
+entity "User Stats" as user_stats {
+    *id: number <<PK>>
+    cars_sold: number
+    cars_bought: number
+    ---
+    *user_id: number <<FK>>
+}
+
+entity "Offer" as offer {
+    *id: number <<PK>>
+
+    price: number
+    milage: number
+    status: text
+    description: text
+
+    created_at: timestamp
+    modified_at: timestamp
+    --
+    *user_id: number <<FK>>
+    *vehicle_id: number <<FK>>
+}
+
+entity "Vehicle" as vehicle {
+    *id: number <<PK>>
+    model: text
+    generation: number
+    ---
+    *make_id: number <<FK>>
+}
+
+entity "Manufacturer" as manufacturer {
+    *id: number <<PK>>
+    name: text
+}
+
+user ||--|{ offer
+user ||--|| user_profile
+user ||--|| user_stats
+offer ||--|{ vehicle
+vehicle ||--|{ manufacturer
+
+' Join tables
+
+entity "User Likes" as user_likes {
+    *id: number <<PK>>
+    ---
+    user_id: number <<FK>>
+    offer_id: number <<FK>>
+}
+
+user ||--|{ user_likes
+offer ||--|{ user_likes
+
+@enduml
