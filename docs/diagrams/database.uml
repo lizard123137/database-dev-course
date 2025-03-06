@@ -41,9 +41,13 @@ entity "Offer" as offer {
     *id: number <<PK>>
 
     price: number
-    milage: number
-    status: text
     description: text
+    status: text
+    
+    color: text
+    milage: number
+    vin: text
+    condition: text
 
     created_at: timestamp
     modified_at: timestamp
@@ -54,8 +58,16 @@ entity "Offer" as offer {
 
 entity "Vehicle" as vehicle {
     *id: number <<PK>>
+
     model: text
     generation: number
+
+    horse_power: number
+    left_hand_drive: boolean
+    driven_wheels: number
+    transmission: text
+    body_style: text
+
     ---
     *make_id: number <<FK>>
 }
