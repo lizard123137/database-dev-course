@@ -9,8 +9,8 @@ skinparam linetype ortho
 entity "User" as user {
     *id: number <<PK>>
 
-    email: text
-    username: text
+    email: varchar(100)
+    username: varchar(100)
     password: text
 
     created_at: timestamp
@@ -42,12 +42,12 @@ entity "Offer" as offer {
 
     price: number
     description: text
-    status: text
+    status: varchar(100)
     
-    color: text
+    color: varchar(100)
     milage: number
-    vin: text
-    condition: text
+    vin: varchar(100)
+    condition: varchar(100)
 
     created_at: timestamp
     modified_at: timestamp
@@ -59,14 +59,14 @@ entity "Offer" as offer {
 entity "Vehicle" as vehicle {
     *id: number <<PK>>
 
-    model: text
+    model: varchar(100)
     generation: number
 
     horse_power: number
     left_hand_drive: boolean
     driven_wheels: number
-    transmission: text
-    body_style: text
+    transmission: varchar(100)
+    body_style: varchar(100)
 
     ---
     *make_id: number <<FK>>
@@ -74,7 +74,7 @@ entity "Vehicle" as vehicle {
 
 entity "Manufacturer" as manufacturer {
     *id: number <<PK>>
-    name: text
+    name: varchar(100)
 }
 
 user ||--|{ offer
