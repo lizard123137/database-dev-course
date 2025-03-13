@@ -17,7 +17,7 @@ entity "User" as user {
     modified_at: timestamp
     ---
     *offer_id: number <<FK>>
-    *user_profile_id: number <<FK>>
+    *user_details_id: number <<FK>>
     *user_stats_id: number <<FK>>
 }
 

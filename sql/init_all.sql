@@ -1,4 +1,5 @@
 \echo 'Loading schema...'
+\i schema/user_details.sql
 \i schema/user_stats.sql
 \i schema/users.sql
 \i schema/manufacturers.sql
