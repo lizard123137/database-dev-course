@@ -69,7 +69,7 @@ entity "Vehicle" as vehicle {
     body_style: varchar(100)
 
     ---
-    *make_id: number <<FK>>
+    *manufacturer_id: number <<FK>>
 }
 
 entity "Manufacturer" as manufacturer {
