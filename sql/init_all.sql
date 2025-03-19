@@ -5,6 +5,7 @@
 \i schema/manufacturers.sql
 \i schema/vehicles.sql
 \i schema/offers.sql
+\i schema/user_likes.sql
 
 \echo 'Loading initial data...'
 COPY manufacturers(name)
