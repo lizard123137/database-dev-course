@@ -1,7 +1,7 @@
 CREATE TABLE vehicles (
     id SERIAL PRIMARY KEY,
 
-    manufacturer_id
+    manufacturer_id INT NOT NULL,
     model VARCHAR(100) NOT NULL,
     generation INT NOT NULL,
 
