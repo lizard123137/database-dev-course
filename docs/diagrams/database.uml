@@ -16,12 +16,11 @@ entity "User" as user {
     created_at: timestamp
     modified_at: timestamp
     ---
-    *offer_id: number <<FK>>
     *user_details_id: number <<FK>>
     *user_stats_id: number <<FK>>
 }
 
-entity "User Details" as user_profile {
+entity "User Detail" as user_profile {
     *id: number <<PK>>
     avatar: text
     description: text
@@ -29,7 +28,7 @@ entity "User Details" as user_profile {
     *user_id: number <<FK>>
 }
 
-entity "User Stats" as user_stats {
+entity "User Stat" as user_stat {
     *id: number <<PK>>
     cars_sold: number
     cars_bought: number
@@ -79,20 +78,20 @@ entity "Manufacturer" as manufacturer {
 
 user ||--|{ offer
 user ||--|| user_profile
-user ||--|| user_stats
+user ||--|| user_stat
 offer ||--|{ vehicle
 vehicle ||--|{ manufacturer
 
 ' Join tables
 
-entity "User Likes" as user_likes {
+entity "User Like" as user_like {
     *id: number <<PK>>
     ---
     user_id: number <<FK>>
     offer_id: number <<FK>>
 }
 
-user ||--|{ user_likes
-offer ||--|{ user_likes
+user ||--|{ user_like
+offer ||--|{ user_like
 
 @enduml
