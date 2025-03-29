@@ -1,0 +1,11 @@
+id,user_id,vehicle_id,price,description,status,color,milage,vin,condition,created_at,modified_at
+1,1,1,12000,"Great car, perfect for drifting","active","Red",150000,"1HGBH41JXMN109186","Used","2025-03-29 10:00:00",
+2,2,3,15000,"Needs some work, but it's a solid vehicle","inactive","Black",120000,"1HGBH41JXMN109187","Used","2025-03-29 10:05:00",
+3,3,5,18000,"Fully modified for drifting","active","White",100000,"1HGBH41JXMN109188","Excellent","2025-03-29 10:10:00",
+4,4,2,11000,"Lightly modified, great for street and track","active","Blue",130000,"1HGBH41JXMN109189","Good","2025-03-29 10:15:00",
+5,5,4,22000,"Drift-ready, all modifications done","active","Green",95000,"1HGBH41JXMN109190","Excellent","2025-03-29 10:20:00",
+6,6,6,10000,"Stock condition, good for a budget build","inactive","Silver",140000,"1HGBH41JXMN109191","Fair","2025-03-29 10:25:00",
+7,7,7,14000,"Perfect for beginners, few mods added","active","Yellow",110000,"1HGBH41JXMN109192","Used","2025-03-29 10:30:00",
+8,8,8,16000,"Custom engine swap, great for drifting","active","Purple",85000,"1HGBH41JXMN109193","Excellent","2025-03-29 10:35:00",
+9,9,9,13000,"Old but reliable, needs some work","inactive","Orange",160000,"1HGBH41JXMN109194","Fair","2025-03-29 10:40:00",
+10,10,10,25000,"Rare car, amazing condition, drift ready","active","Pink",90000,"1HGBH41JXMN109195","Excellent","2025-03-29 10:45:00",

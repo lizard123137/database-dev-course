@@ -1,0 +1,11 @@
+id,manufacturer_id,model,generation,horse_power,left_hand_drive,driven_wheels,transmission,body_style
+1,7,"E36 328i",3,193,true,2,"Manual","Coupe"
+2,7,"E46 330Ci",4,231,true,2,"Manual","Coupe"
+3,7,"E39 540i",4,286,true,2,"Manual","Sedan"
+4,7,"E36 M3",3,321,true,2,"Manual","Coupe"
+5,7,"E46 M3",4,343,true,2,"Manual","Coupe"
+6,20,"350Z",1,287,true,2,"Manual","Coupe"
+7,20,"S13 240SX",1,155,true,2,"Manual","Coupe"
+8,21,"Omega",2,204,true,2,"Manual","Sedan"
+9,12,"124 Spider",1,170,true,2,"Manual","Convertible"
+10,24,"GT86",1,205,true,2,"Manual","Coupe"

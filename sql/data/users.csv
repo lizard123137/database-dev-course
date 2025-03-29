@@ -1,0 +1,11 @@
+id,email,username,password,user_details_id,user_stats_id,created_at,modified_at
+1,john.doe@example.com,johndoe,d41d8cd98f00b204e9800998ecf8427e,1,1,2025-03-29 09:50:00,
+2,jane.smith@example.com,janesmith,098f6bcd4621d373cade4e832627b4f6,2,2,2025-03-29 09:51:00,
+3,bob.jones@example.com,bobjones,e99a18c428cb38d5f260853678922e03,3,3,2025-03-29 09:52:00,
+4,mary.jane@example.com,maryjane,ab56b4d92b40713acc5af89985d4b786,4,4,2025-03-29 09:53:00,
+5,alice.cooper@example.com,alicecooper,9a0364b9e99bb480dd25e1f0284c8555,5,5,2025-03-29 09:54:00,
+6,richard.roe@example.com,richardroe,1d2d2a8dbd4bc1b5a33f59571b5cfb29,6,6,2025-03-29 09:55:00,
+7,elizabeth.green@example.com,elizabethgreen,5d41402abc4b2a76b9719d911017c592,7,7,2025-03-29 09:56:00,
+8,george.white@example.com,georgewhite,c4ca4238a0b923820dcc509a6f75849b,8,8,2025-03-29 09:57:00,
+9,steve.martin@example.com,stevemartin,202cb962ac59075b964b07152d234b70,9,9,2025-03-29 09:58:00,
+10,susan.lee@example.com,susanlee,c81e728d9d4c2f636f067f89cc14862c,10,10,2025-03-29 09:59:00,
