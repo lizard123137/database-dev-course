@@ -98,14 +98,34 @@ INSERT INTO manufacturers(name) VALUES ('Volvo');
 
 \subsection*{DML --- Data Query Language}
 \begin{verbatim}
-    
+    SELECT * FROM manufacturers;
 \end{verbatim}
 
 \subsection*{DCL --- Data Control Language}
+\begin{verbatim}
+    
+\end{verbatim}
 
 \subsection*{TCL --- Transaction Control Language}
+Projekt nie korzysta z tranzakcji. Pozwalają one natomiast na większą kontrolę nad zmianami.
+W przypadku błędów pozwalają one na powrót do określonego punktu.
+\begin{verbatim}
+    START TRANSACTION;
+    -- Zmiana 1
+    SAVEPOINT save;
+    -- Zmiana 2
+    ROLLBACK TO save;
+    COMMIT;
+\end{verbatim}
+Takie rozwiązanie w przypadku niepowodzenia przy wykonywaniu \textbf{Zmiany 2}
+wykona wszystkie operacje do punktu \textbf{save} i zignoruje wszystko aż do polecenia \textbf{COMMIT}.
 
 \pagebreak
 \part{Baza NoSQL}
+\section*{Opis problemu}
+Dla bazy \textbf{NoSQL} wykorzystamy ten sam problem co dla bazy \textbf{SQL}.
+
+\section*{Oprogramowanie}
+Skorzystamy z bazy \textbf{MongoDB}. Tak samo jak w przypadku bazy \textbf{SQL} projekt uruchomimy w kontenerze \textbf{Docker}.
 
 \end{document}
