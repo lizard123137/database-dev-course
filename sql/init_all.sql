@@ -61,3 +61,19 @@ UPDATE manufacturers SET name = 'Volvo' WHERE name = 'volvo';
 
 INSERT INTO manufacturers(name) VALUES ('test');
 DELETE FROM manufacturers WHERE name = 'test';
+
+\echo ' - DQL Queries:'
+SELECT * FROM manufacturers;
+
+SELECT 
+    v.id, 
+    m.name AS manufacturer,
+    v.model,
+    V.generation,
+    v.horse_power,
+    v.left_hand_drive,
+    v.driven_wheels,
+    v.transmission,
+    v.body_style
+FROM vehicles v
+JOIN manufacturers m ON v.manufacturer_id = m.id;
