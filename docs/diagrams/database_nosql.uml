@@ -1,0 +1,73 @@
+@startuml
+
+' hide the spot
+' hide circle
+
+' avoid problems with angled crows feet
+skinparam linetype ortho
+
+entity "User" as user {
+    *id: number <<PK>>
+
+    email: varchar(100)
+    username: varchar(100)
+    password: text
+    
+    avatar: text
+    description: text
+    cars_sold: number
+    cars_bought: number
+
+    created_at: timestamp
+    modified_at: timestamp
+}
+
+entity "Offer" as offer {
+    *id: number <<PK>>
+
+    price: number
+    description: text
+    status: varchar(100)
+    
+    color: varchar(100)
+    milage: number
+    vin: varchar(100)
+    condition: varchar(100)
+
+    created_at: timestamp
+    modified_at: timestamp
+    --
+    *user_id: number <<FK>>
+    *vehicle_id: number <<FK>>
+}
+
+entity "Vehicle" as vehicle {
+    *id: number <<PK>>
+
+    manufacturer: varchar(100)
+    model: varchar(100)
+    generation: number
+
+    horse_power: number
+    left_hand_drive: boolean
+    driven_wheels: number
+    transmission: varchar(100)
+    body_style: varchar(100)
+}
+
+user ||--|{ offer
+offer ||--|{ vehicle
+
+' Join tables
+
+entity "User Like" as user_like {
+    *id: number <<PK>>
+    ---
+    user_id: number <<FK>>
+    offer_id: number <<FK>>
+}
+
+user ||--|{ user_like
+offer ||--|{ user_like
+
+@enduml

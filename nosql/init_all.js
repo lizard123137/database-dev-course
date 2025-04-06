@@ -1,1 +1,0 @@
-load("collections/users.js");
