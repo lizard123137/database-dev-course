@@ -1,3 +1,3 @@
-FROM mongodb/mongodb-community-server:latest
+FROM mongo:latest
 
-EXPOSE 27017:27017
+EXPOSE 27017

@@ -154,7 +154,66 @@ Skorzystamy z bazy \textbf{MongoDB}. Tak samo jak w przypadku bazy \textbf{SQL} 
 W celu dostosowania bazy do praktyk stosowanych w \textbf{MongoDB} ilość relacji została zmniejszona jedynie do tych niezbędnych.
 
 \section*{Diagram EER}
-\includegraphics[width=\textwidth]{database_nosql.png}
+\includegraphics[height=\textheight]{database_nosql.png}
 \pagebreak
+
+\section*{Wstawianie danych}
+Dane są wstawiane do bazy za pomocą skryptów w języku \textbf{Python}.
+
+\begin{verbatim}
+    # Przykład wstawiania danych
+    import pymongo
+
+    client = pymongo.MongoClient("mongodb://localhost:27017/")
+
+    print("Creating database...")
+    database = client["car-trading"]
+
+    print("Initializing data...")
+    init_vehicles(database)
+
+    def init_vehicles(db):
+        print("Initializing vehicles collection...")
+
+        vehicles = db["vehicles"]
+        vehicles.insert_many([
+            {
+                "_id": 1,
+                "manufacturer": "BMW",
+                "model": "E36 328i",
+                "generation": 3,
+                "horse_power": 193,
+                "left_hand_drive": True,
+                "driven_wheels": "RWD",
+                "transmission": "Manual",
+                "body_style": "Coupe"
+            },
+            {
+                "_id": 2,
+                "manufacturer": "BMW",
+                "model": "E46 330Ci",
+                "generation": 4,
+                "horse_power": 231,
+                "left_hand_drive": True,
+                "driven_wheels": "RWD",
+                "transmission": "Manual",
+                "body_style": "Coupe"
+            },
+        ])
+\end{verbatim}
+
+\section*{Kwerendy w języku MongoDB}
+\subsection*{Filtrowanie}
+\subsection*{Projekcja}
+\subsection*{Agregacja}
+\subsection*{Łączenie kolekcji}
+
+\pagebreak
+\part{Podsumowanie}
+Znajomość języka \textbf{SQL} jest umiejętnością, którą powinien posiadać każdy programista. Znaczna większość projektów komercyjnych korzysta z baz tego typu.
+Inną zaletą \textbf{SQL} jest jego uniwersalność. Dialekty różnych baz są bardzo podobne a podstawowe funkcjonalności są takie same dla wszystkich rozwiązań.
+
+Nie znaczy to jednak, że bazy \textbf{NoSQL} są bezużyteczne. Bardzo często są stosowane jako \textbf{cache} (np. baza \textbf{Redis} znana ze swojej szybkości). Poza tym bazy tego typu są powszechnie stosowane w portalach społecznościowych,
+gdzie dane są ze sobą powiązane w skomplikowany sposób, który nie jest możliwy do opisania za pomocą relacji tabel (np. relacje między ludźmi).
 
 \end{document}

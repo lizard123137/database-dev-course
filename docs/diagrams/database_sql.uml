@@ -74,6 +74,7 @@ entity "Vehicle" as vehicle {
 entity "Manufacturer" as manufacturer {
     *id: number <<PK>>
     name: varchar(100)
+    ---
 }
 
 user ||--|{ offer
@@ -87,8 +88,8 @@ vehicle ||--|{ manufacturer
 entity "User Like" as user_like {
     *id: number <<PK>>
     ---
-    user_id: number <<FK>>
-    offer_id: number <<FK>>
+    *user_id: number <<FK>>
+    *offer_id: number <<FK>>
 }
 
 user ||--|{ user_like

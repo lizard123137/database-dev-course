@@ -18,3 +18,10 @@ cd sql
 docker build --tag 'database-dev-sql' .
 docker run 'database-dev-sql'
 ```
+
+**Currently the `NoSQL` module `Dockerfile` is not working properly, so you need to install `mongo` locally.**
+Running the `NoSQL` module:
+``` bash
+cd nosql
+python3 init.py
+```

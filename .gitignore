@@ -1,3 +1,4 @@
 # Ignore all latex compilation files
 docs/documentation.*
 !docs/documentation.tex
+nosql/__pycache__
