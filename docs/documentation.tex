@@ -105,6 +105,7 @@ INSERT INTO manufacturers(name) VALUES ('Volvo');
     DELETE FROM manufacturers WHERE name = 'test';
 \end{verbatim}
 
+\pagebreak
 \subsection*{DQL --- Data Query Language}
 \begin{verbatim}
     SELECT * FROM manufacturers;
@@ -203,10 +204,72 @@ Dane są wstawiane do bazy za pomocą skryptów w języku \textbf{Python}.
 \end{verbatim}
 
 \section*{Kwerendy w języku MongoDB}
+
 \subsection*{Filtrowanie}
+\begin{verbatim}
+    db.vehicles.find({ manufacturer: "BMW" })
+    db.users.find({"user_stats.cars_sold": { $gt: 5 }});
+\end{verbatim}
+
 \subsection*{Projekcja}
+\begin{verbatim}
+    db.vehicles.find({}, { manufacturer: 1 })
+    db.users.find(
+        {}, 
+        { 
+            "username": 1, 
+            "email": 1, 
+            "_id": 0 
+        }
+    )
+\end{verbatim}
+
 \subsection*{Agregacja}
+\begin{verbatim}
+    db.offers.aggregate([
+        {
+            $group: {
+                _id: "$user_id",
+                offer_count: { $sum: 1 }
+            }
+        }
+    ])
+\end{verbatim}
+
+\pagebreak
 \subsection*{Łączenie kolekcji}
+\begin{verbatim}
+    db.offers.aggregate([
+        {
+            $lookup: {
+                from: "vehicles",
+                localField: "vehicle_id",
+                foreignField: "_id",
+                as: "vehicle"
+            }
+        },
+        {
+            $unwind: {
+                path: "$vehicle",
+                preserveNullAndEmptyArrays: true
+            }
+        },
+        {
+            $lookup: {
+                from: "users",
+                localField: "user_id",
+                foreignField: "_id",
+                as: "user"
+            }
+        },
+        {
+            $unwind: {
+                path: "$user",
+                preserveNullAndEmptyArrays: true
+            }
+        }
+    ])
+\end{verbatim}
 
 \pagebreak
 \part{Podsumowanie}
